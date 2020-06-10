@@ -30,4 +30,8 @@ class BooksController < ApplicationController
   def new_book
     @new_book = Book.new
   end
+
+  def book_params
+    params.require(:book).permit(:title, :body)
+  end
 end
