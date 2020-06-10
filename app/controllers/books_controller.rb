@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :current_user_info
 
   def create
   end
@@ -22,4 +22,8 @@ class BooksController < ApplicationController
   def destroy
   end
 
+  private
+  def current_user_info
+    @user = User.find(current_user.id)
+  end
 end
