@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
+
   def index
   end
 
@@ -7,4 +9,5 @@ class BooksController < ApplicationController
 
   def edit
   end
+
 end
