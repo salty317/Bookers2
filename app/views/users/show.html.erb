@@ -1,4 +1,7 @@
 <div class="container">
+  <p id="notice">
+    <%= flash[:notice] %>
+  </p>
   <div class="row">
     <%= render 'layouts/user_info', user: @user, book: @new_book %>
     <div class="col-xs-9">
