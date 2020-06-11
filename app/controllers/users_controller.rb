@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :current_user_info, :new_book
+  before_action :authenticate_user!, :new_book
 
   def index
+    @user = User.find(current_user.id)
     @users = User.all
   end
 
@@ -20,10 +21,6 @@ class UsersController < ApplicationController
   end
 
   private
-  def current_user_info
-    @user = User.find(current_user.id)
-  end
-
   def new_book
     @new_book = Book.new
   end
